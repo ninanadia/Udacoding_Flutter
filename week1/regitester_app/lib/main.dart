@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:regitester_app/pages/profile.dart';
-import 'package:regitester_app/pages/register.dart';
+import 'pac kage:regitester_app/pages/register.dart';
 
 void main() {
   runApp(MyApp());
