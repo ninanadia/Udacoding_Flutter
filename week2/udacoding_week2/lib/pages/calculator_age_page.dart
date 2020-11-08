@@ -123,14 +123,30 @@ class _CalculatorPageState extends State<CalculatorPage> {
                       int birthYearr = int.parse(birthYear);
 
                       if (_formKey.currentState.validate()) {
-                        DateTime today = DateTime.now();
-                        int ageDate = today.day - birthDay;
-                        int ageMonth = today.month - birthMonthh;
+                       DateTime today = DateTime.now();
                         int ageYear = today.year - birthYearr;
-
+                        int ageMonth;
+                        int ageDate;
+                        if (today.month > birthMonthh) {
+                          ageMonth = today.month - birthMonthh;
+                        }else{
+                          ageYear --;
+                          ageMonth = 12 - (birthMonthh - today.month);
+                        }
+                        if (today.day > birthDay) {
+                          ageDate = today.day - birthDay;
+                        }else{
+                          ageMonth--;
+                          ageDate = 30 - (birthDay - today.day);
+                        }
+                        
                         _alertdialog(ageDate, ageMonth, ageYear);
                       }
-                    }),
+                    
+
+                        
+                      }
+              ),
               ),
             ])));
   }
